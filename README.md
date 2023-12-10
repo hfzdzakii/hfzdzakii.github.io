@@ -1,5 +1,4 @@
 <h1>Welcome</h1>
-</br></br>
 (April 2023) : Hai, just call me Hafizh. By the way, this is my first landing page. So, I just make as simple as I want.
 It,s just contain 2 files as you can see. I'm using Bootstrap 5.2, at least to make my landing page just more looking good.
 I plan to put all my college's projects and task which I feel worthy in my GitHub. Then, I linked it into my landing page.
