@@ -86,15 +86,15 @@
           </p>
       </div>
       <hr class="border-t-[5px] border-dotted border-sub_color my-9">
-      <div class="bg-red-500">
-        <div>Projects</div>
-        <div>Certitifaces</div>
-        <div>Skills</div>
+      <div class="flex justify-evenly">
+        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition">Projects</div>
+        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition">Certificates</div>
+        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition">Skills</div>
       </div>
       <!-- ------------------ -->
-      <div id="projects"></div>
-      <div id="certificates"></div>
-      <div id="skills"></div>
+      <div id="projects" class="hidden"></div>
+      <div id="certificates" class="hidden"></div>
+      <div id="skills" class="hidden"></div>
       <!-- ------------------- -->
       <hr class="border-t-[5px] border-dotted border-sub_color my-4">
       <p id="tes">
@@ -118,17 +118,20 @@
       $(document).ready(function() {
 
         $("#projects").load("projects.html")
+        $("#certificates").load("certificates.html")
+        $("#skills").load("skills.html")
 
         $("#tes").click(function() {
           console.log("Haloo")
         })
-        // $(".closed").click(function() {
-        //   // Close all divs
-        //   $(".closed").removeClass("open").addClass("closed");
+        
+        $(".hidden").click(function() {
+          // Close all divs
+          $(".hidden").removeClass("block").addClass("hidden");
 
-        //   // Open the clicked div
-        //   $(this).removeClass("closed").addClass("open");
-        // });
+          // Open the clicked div
+          $(this).removeClass("hidden").addClass("block");
+        });
       });
     </script>
   </body>
