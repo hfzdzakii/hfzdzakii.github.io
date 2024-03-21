@@ -86,15 +86,15 @@
           </p>
       </div>
       <hr class="border-t-[5px] border-dotted border-sub_color my-9">
-      <div class="flex justify-evenly">
-        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition">Projects</div>
-        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition">Certificates</div>
-        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition">Skills</div>
+      <div class="flex justify-evenly py-4">
+        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition tombol" id="tombol1">Projects</div>
+        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition tombol" id="tombol2">Certificates</div>
+        <div class="bg-sub_sub_color px-4 py-1 uppercase rounded-2xl hover:bg-hr duration-300 transition tombol" id="tombol3">Skills</div>
       </div>
       <!-- ------------------ -->
-      <div id="projects" class="hidden"></div>
-      <div id="certificates" class="hidden"></div>
-      <div id="skills" class="hidden"></div>
+      <div id="section1" class="block projects hide"></div>
+      <div id="section2" class="hidden certificates hide"></div>
+      <div id="section3" class="hidden skills hide"></div>
       <!-- ------------------- -->
       <hr class="border-t-[5px] border-dotted border-sub_color my-4">
       <p id="tes">
@@ -117,20 +117,19 @@
     <script>
       $(document).ready(function() {
 
-        $("#projects").load("projects.html")
-        $("#certificates").load("certificates.html")
-        $("#skills").load("skills.html")
+        $(".projects").load("projects.html")
+        $(".certificates").load("certificates.html")
+        $(".skills").load("skills.html")
 
         $("#tes").click(function() {
           console.log("Haloo")
         })
         
-        $(".hidden").click(function() {
-          // Close all divs
-          $(".hidden").removeClass("block").addClass("hidden");
-
-          // Open the clicked div
-          $(this).removeClass("hidden").addClass("block");
+        $(".tombol").click(function() {
+          var sectionId = $(this).attr("id").replace("tombol", "section")
+          sectionId = "#".concat(sectionId)
+          $(".hide").removeClass("block").addClass("hidden")
+          $(sectionId).removeClass("hidden").addClass("block")
         });
       });
     </script>
